@@ -10,10 +10,10 @@ export const Navbar = () => {
             </Menu.Item>
             <Menu.Item as={NavLink} to="/test">Test</Menu.Item>
             <Menu.Item position="right">
-                <Dropdown text="login" pointing="top right" icon={'user'}>
+                <Dropdown text="Login" pointing="top right" icon={'user'}>
                     <Dropdown.Menu>
                         <Dropdown.Item icon="user" text="Sign in" as={NavLink} exact to="/signin"/>
-                        <Dropdown.Item icon="add user" text="Sign up" as={NavLink} to="/signup" />
+                        <Dropdown.Item icon="add user" text="Register" as={NavLink} to="/register" />
                     </Dropdown.Menu>
                 </Dropdown>
             </Menu.Item>
