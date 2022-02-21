@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Form, Button, Header, Input} from "semantic-ui-react";
+import {Form, Button, Header, Input, Message} from "semantic-ui-react";
 
 export const Signin = () => {
     const [username, setUsername] = useState('');
@@ -21,7 +21,13 @@ export const Signin = () => {
     }
 
     const submit = () => {
-        console.log(username);
+        Meteor.loginWithPassword(username, password, (err) => {
+            if (err) {
+                setError(err.reason);
+            } else {
+                setError('');
+            }
+        })
     }
 
     return (
@@ -51,6 +57,14 @@ export const Signin = () => {
                     icon='sign in'
                 />
             </Form>
+            {error === '' ? (
+                '' )
+                : (
+                    <Message warning
+                             error
+                             header="Username or Password is Incorrect"
+                             content={error} />
+            )};
         </div>
     );
 };

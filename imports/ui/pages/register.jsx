@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {Header, Form} from "semantic-ui-react";
+import {Header, Form, Message} from "semantic-ui-react";
 
 export const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleChange = (e, {name, value}) => {
         switch(name) {
@@ -19,7 +20,13 @@ export const Register = () => {
     }
 
     const submit = () => {
-        console.log(username);
+        Accounts.createUser({ username: username, password: password}, (err) => {
+            if (err) {
+                setError(err.reason);
+            } else {
+                setError('');
+            }
+        })
     }
     return (
         <div>
@@ -44,9 +51,17 @@ export const Register = () => {
                 />
                 <Form.Button
                     type='submit'
-                    content='Sign in'
+                    content='Sign up'
                     icon='sign in'
                 />
+                {error === '' ? (
+                    ''
+                ) : (
+                    <Message warning
+                             error
+                             header="Registration was not successful"
+                             content={error} />
+                )}
             </Form>
         </div>
     );
