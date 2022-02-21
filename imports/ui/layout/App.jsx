@@ -6,6 +6,7 @@ import {Navbar} from "../components/Navbar";
 import {Landing} from "../pages/Landing";
 import {Test} from "../pages/Test";
 import {NotFound} from "../pages/404";
+import {ProfilePage} from "../pages/ProfilePage";
 
 export const App = () => (
   <div>
@@ -13,6 +14,7 @@ export const App = () => (
         <Navbar />
         <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/profilepage" element={<ProfilePage/>}/>
             <Route path="/test" element={<Test />} />
             <Route path="*" element={<NotFound />} />
         </Routes>

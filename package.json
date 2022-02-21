@@ -23,5 +23,8 @@
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "simpl-schema": "^1.12.0"
   }
 }
