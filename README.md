@@ -38,10 +38,3 @@ Misc
 (Setting) Private/not private
 Working on next:
 Profile DB
-
-Not Worked On:
-Leaderboard
-Profile DB
-Account DB
-Tips/Forum Db
-Tips/Forum Page
