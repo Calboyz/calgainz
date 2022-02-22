@@ -26,7 +26,10 @@
     "testModule": "tests/main.js"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.28.0",
     "simpl-schema": "^1.12.0"
   }
 }
