@@ -5,7 +5,8 @@
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer"
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "lint": "eslint --ext .js ."
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
@@ -25,6 +26,7 @@
     "testModule": "tests/main.js"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
     "simpl-schema": "^1.12.0"
   }
 }
