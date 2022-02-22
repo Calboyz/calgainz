@@ -36,11 +36,12 @@ Rafael:
 Chase:
 - Profile implementation
 - List Info:
-- - Profile pic
-- - Name
-- - Age
-- - Weight
-- - Misc
+  - Profile pic
+  - Name
+  - Age
+  - Weight
+  - Misc
+
 Working on next:
 - Profile DB
 - (Setting) Private/not private
