@@ -9,6 +9,7 @@ import {NotFound} from "../pages/404";
 import {Signin} from "../pages/signin";
 import {Register} from "../pages/register";
 import {ProfilePage} from "../pages/ProfilePage";
+import {Dashboard} from "../pages/Dashboard";
 
 export const App = () => (
   <div>
@@ -17,6 +18,7 @@ export const App = () => (
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/profilepage" element={<ProfilePage/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/test" element={<Test />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/register" element={<Register />} />
