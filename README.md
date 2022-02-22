@@ -1,40 +1,46 @@
 # calgainz
 
 To run the applicaton type in the command:
+```
 meteor run
+```
 
 To access the application, go to:
+```
 http://localhost:3000
+```
 
+## Assignment 2
 Completed:
-Navigation Bar
-Sign in sign up mockups
-profile page mockup
+- Navigation Bar
+- Sign in sign up mockups
+- Profile page mockup
 
 Skyler:
-Homepage
-Sign up
-Sign in
-Working on next:
-Leaderboard
-Account DB
+- Homepage
+- Sign up Functionality
+- Sign in Functionality
+- Working on next:
+- Points 
+- Leaderboard
+- Account DB
 
 Rafael:
-Dashboard 
-Previous calories
-Points
-Daily Goal
-Working on next:
-Tips/Forum
-Tips/Forum DB
+- Dashboard mockup
+- Working on next:
+- Tips/Forum
+- Tips/Forum DB
+- Calorie Count
+- Daily Goal
 
 Chase:
-Profile
-Profile pic
-Name
-Age
-Weight
-Misc
-(Setting) Private/not private
+- Profile implementation
+- List Info:
+- - Profile pic
+- - Name
+- - Age
+- - Weight
+- - Misc
 Working on next:
-Profile DB
+- Profile DB
+- (Setting) Private/not private
