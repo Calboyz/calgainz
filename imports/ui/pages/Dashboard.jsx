@@ -1,12 +1,21 @@
 import React from 'react';
-import {Container, Image, Divider, Grid, Segment, Header, List} from "semantic-ui-react";
+import { Container, Image, Button, Icon, Divider, Grid, Segment, Header, List } from "semantic-ui-react";
 import ProgressBar from "@ramonak/react-progress-bar";
 
 export const Dashboard = () => {
-    return (
+  return (
+      <div>
 
         <Container>
+          <Segment inverted>
+            <Divider horizontal inverted>
+              <Icon name='calendar alternate outline'/>
+              Today
+            </Divider>
+          </Segment>
+        </Container>
 
+        <Container>
           <Grid celled>
             <Grid.Row>
               <Grid.Column width={3}>
@@ -46,7 +55,7 @@ export const Dashboard = () => {
               </Grid.Column>
               <Grid.Column width={13}>
                 <Header as='h2'>
-                  <ProgressBar completed={50} customLabel="100/200" />
+                  <ProgressBar completed={50} customLabel="100/200"/>
                 </Header>
               </Grid.Column>
             </Grid.Row>
@@ -61,12 +70,12 @@ export const Dashboard = () => {
               </Grid.Column>
               <Grid.Column width={13}>
                 <Header as='h2'>
-                420 Points
+                  420 Points
                 </Header>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-
         </Container>
-    );
+      </div>
+  );
 };
