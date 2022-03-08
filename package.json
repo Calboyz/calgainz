@@ -2,14 +2,11 @@
   "name": "calgainz",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "lint": "eslint --ext .js ."
+    "start": "meteor --settings config/settings.development.json"
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
+    "formik": "^2.2.9",
     "meteor-node-stubs": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
