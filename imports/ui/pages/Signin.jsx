@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import {Form, Header,  Message} from "semantic-ui-react";
 import { Navigate, Link } from 'react-router-dom'
 import {useFormik} from "formik";
 
-export const Signin = () => {
+const Signin = ({ location }) => {
     const [error, setError] = useState('');
     const [redirectToReferrer, setRedirectToReferrer] = useState(false);
     const formik = useFormik({
@@ -92,4 +93,14 @@ export const Signin = () => {
             )};
         </div>
     );
+
+    Signin.propTypes = {
+        location: PropTypes.object,
+    };
 };
+
+Signin.propTypes ={
+    location: PropTypes.object,
+};
+
+export default Signin;

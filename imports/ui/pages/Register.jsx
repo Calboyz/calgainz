@@ -4,7 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Navigate, Link } from 'react-router-dom'
 import { useFormik } from "formik";
 
-export const Register = () => {
+const Register = () => {
     const [error, setError] = useState('');
     const [redirectToReferrer, setRedirectToReferrer] = useState(false)
     const formik = useFormik({
@@ -168,3 +168,5 @@ export const Register = () => {
         </div>
     );
 };
+
+export default Register;

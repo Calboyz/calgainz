@@ -1,7 +1,9 @@
 import React from 'react';
 
-export const Test = () => {
+const Test = () => {
     return (
         <h1>Test Page</h1>
     );
 };
+
+export default Test;

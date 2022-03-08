@@ -11,7 +11,10 @@ const Navbar = ({ currentUser }) => {
             <Menu.Item as={NavLink} exact to="/">
                 <Header inverted as="h1">CALGAINZ</Header>
             </Menu.Item>
-            <Menu.Item as={NavLink} to="/test">Test</Menu.Item>
+            {currentUser ? (
+                [<Menu.Item as={NavLink} to="/test">Test</Menu.Item>,
+                <Menu.Item as={NavLink} to="/profilepage">Profile Page</Menu.Item>]
+            ) : ''}
             <Menu.Item position="right">
                 {currentUser === '' ? (
                     <Dropdown text="Login" pointing="top right" icon={'user'}>
