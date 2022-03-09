@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import {Form, Header,  Message} from "semantic-ui-react";
+import {Container, Form, Header, Message} from "semantic-ui-react";
 import { Navigate, Link } from 'react-router-dom'
 import {useFormik} from "formik";
 
@@ -42,11 +42,12 @@ const Signin = ({ location }) => {
     }
 
     return (
-        <div>
+        <Container id='signin-page'>
             <Header as='h1'>Login Page</Header>
             <Form inverted onSubmit={formik.handleSubmit}>
                 <label>Username</label>
                 <Form.Input
+                    id='signin-form-username'
                     icon='user'
                     iconPosition='left'
                     name='username'
@@ -61,20 +62,22 @@ const Signin = ({ location }) => {
                 />
                 <label>Password</label>
                 <Form.Input
-                        icon='lock'
-                        iconPosition='left'
-                        name='password'
-                        placeholder='Enter Password'
-                        type='password'
-                        value={formik.values.password}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={(formik.errors.password && formik.touched.password) ? {
-                            content: 'Please enter a username',
-                            pointing: 'below',
-                        } : null}
+                    id='signin-form-password'
+                    icon='lock'
+                    iconPosition='left'
+                    name='password'
+                    placeholder='Enter Password'
+                    type='password'
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={(formik.errors.password && formik.touched.password) ? {
+                        content: 'Please enter a username',
+                        pointing: 'below',
+                    } : null}
                 />
                 <Form.Button
+                    id='signin-form-submit'
                     type='submit'
                     content='Sign in'
                     icon='sign in'
@@ -84,19 +87,15 @@ const Signin = ({ location }) => {
                 Create an account
             </Link>
             {error === '' ? (
-                '' )
+                    '' )
                 : (
                     <Message warning
                              error
                              header="Username or Password is Incorrect"
                              content={error} />
-            )};
-        </div>
+                )};
+        </Container>
     );
-
-    Signin.propTypes = {
-        location: PropTypes.object,
-    };
 };
 
 Signin.propTypes ={

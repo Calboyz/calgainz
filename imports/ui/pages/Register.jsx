@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Header, Form, Message, Icon} from "semantic-ui-react";
+import {Header, Form, Message, Icon, Container} from "semantic-ui-react";
 import { Accounts } from 'meteor/accounts-base';
 import { Navigate, Link } from 'react-router-dom'
 import { useFormik } from "formik";
@@ -76,51 +76,54 @@ const Register = () => {
         return <Navigate to="/" replace={true}/>
     }
     return (
-        <div>
-            <Header as='h1'>Register Page</Header>
+            <Container id='register-page'>
+                <Header as='h1'>Register Page</Header>
                 <Form onSubmit={formik.handleSubmit}>
                     <label>Username</label>
                     <Form.Input
-                                icon='user'
-                                iconPosition='left'
-                                name='username'
-                                placeholder='Enter Username'
-                                onChange={formik.handleChange}
-                                value={formik.values.username}
-                                onBlur={formik.handleBlur}
-                                error={(formik.errors.username && formik.touched.username) ? {
-                                    content: 'Please enter a valid username',
-                                    pointing: 'below',
-                                } : null}
+                        id='register-form-username'
+                        icon='user'
+                        iconPosition='left'
+                        name='username'
+                        placeholder='Enter Username'
+                        onChange={formik.handleChange}
+                        value={formik.values.username}
+                        onBlur={formik.handleBlur}
+                        error={(formik.errors.username && formik.touched.username) ? {
+                            content: 'Please enter a valid username',
+                            pointing: 'below',
+                        } : null}
                     />
                     <label>Email</label>
                     <Form.Input
-                                icon='mail'
-                                iconPosition='left'
-                                name='email'
-                                placeholder='Enter Email'
-                                value={formik.values.email}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                error={(formik.errors.email && formik.touched.email) ? {
-                                    content: 'Please enter a valid email address',
-                                    pointing: 'below',
-                                } : null}
+                        id='register-form-email'
+                        icon='mail'
+                        iconPosition='left'
+                        name='email'
+                        placeholder='Enter Email'
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={(formik.errors.email && formik.touched.email) ? {
+                            content: 'Please enter a valid email address',
+                            pointing: 'below',
+                        } : null}
                     />
                     <label>Password</label>
                     <Form.Input
-                                icon='lock'
-                                iconPosition='left'
-                                name='password'
-                                placeholder='Enter Password'
-                                type='password'
-                                value={formik.values.password}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                error={(formik.errors.password && formik.touched.password) ? {
-                                    content: 'Please enter a valid password',
-                                    pointing: 'below',
-                                } : null}
+                        id='register-form-password'
+                        icon='lock'
+                        iconPosition='left'
+                        name='password'
+                        placeholder='Enter Password'
+                        type='password'
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={(formik.errors.password && formik.touched.password) ? {
+                            content: 'Please enter a valid password',
+                            pointing: 'below',
+                        } : null}
                     />
                     {(formik.values.password && formik.errors.password) ?
                         <Message>
@@ -136,6 +139,7 @@ const Register = () => {
                         ''}
                     <label>Confirm Password</label>
                     <Form.Input
+                        id='register-form-confirm'
                         icon='lock'
                         iconPosition='left'
                         name='confirm'
@@ -153,6 +157,7 @@ const Register = () => {
                         Already have an account?
                     </Link>
                     <Form.Button
+                        id='register-form-submit'
                         type='submit'
                         content='Sign up'
                     />
@@ -165,7 +170,7 @@ const Register = () => {
                                  content={error} />
                     )}
                 </Form>
-        </div>
+            </Container>
     );
 };
 
