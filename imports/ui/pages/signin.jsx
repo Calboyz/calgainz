@@ -1,46 +1,62 @@
 import React, {useState} from 'react';
 import { Meteor } from 'meteor/meteor';
-import {Form, Button, Header, Input, Message} from "semantic-ui-react";
+import {Form, Header,  Message} from "semantic-ui-react";
+import { Navigate, Link } from 'react-router-dom'
+import {useFormik} from "formik";
 
 export const Signin = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
-    const handleChange = (e, {name, value}) => {
-        switch(name) {
-            case 'username':
-                setUsername(value);
-                break;
-            case 'password':
-                setPassword(value);
-                break
-            default:
-                // Do nothing
-        }
-    }
-
-    const submit = () => {
-        Meteor.loginWithPassword(username, password, (err) => {
-            if (err) {
-                setError(err.reason);
-            } else {
-                setError('');
+    const [redirectToReferrer, setRedirectToReferrer] = useState(false);
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            password: '',
+        },
+        validate: (values) => {
+            const errors = {};
+            if (!values.username) {
+                errors.username = 'Required';
             }
-        })
+            if (!values.password) {
+                errors.password = 'Required';
+                return errors;
+            }
+        },
+        onSubmit: async (values, {setSubmitting}) => {
+            setTimeout(() => {
+                Meteor.loginWithPassword(values.username, values.password, (err) => {
+                    if (err) {
+                        setError(err.reason);
+                    } else {
+                        setRedirectToReferrer(true);
+                        setError('');
+                    }
+                })
+                setSubmitting(false);
+            }, 400)}
+    });
+
+    if (redirectToReferrer) {
+        return <Navigate to="/" replace={true} />
     }
 
     return (
         <div>
             <Header as='h1'>Login Page</Header>
-            <Form inverted onSubmit={submit}>
+            <Form inverted onSubmit={formik.handleSubmit}>
                 <label>Username</label>
                 <Form.Input
                     icon='user'
                     iconPosition='left'
                     name='username'
                     placeholder='Enter Username'
-                        onChange={handleChange}
+                    onChange={formik.handleChange}
+                    value={formik.values.username}
+                    onBlur={formik.handleBlur}
+                    error={(formik.errors.username && formik.touched.username) ? {
+                        content: 'Please enter a username',
+                        pointing: 'below',
+                    } : null}
                 />
                 <label>Password</label>
                 <Form.Input
@@ -49,7 +65,13 @@ export const Signin = () => {
                         name='password'
                         placeholder='Enter Password'
                         type='password'
-                        onChange={handleChange}
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={(formik.errors.password && formik.touched.password) ? {
+                            content: 'Please enter a username',
+                            pointing: 'below',
+                        } : null}
                 />
                 <Form.Button
                     type='submit'
@@ -57,6 +79,9 @@ export const Signin = () => {
                     icon='sign in'
                 />
             </Form>
+            <Link to="/signin">
+                Create an account
+            </Link>
             {error === '' ? (
                 '' )
                 : (
