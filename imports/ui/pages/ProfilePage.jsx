@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Image, Divider, Grid, Segment, Header, List} from "semantic-ui-react";
 
-export const ProfilePage = () => {
+const ProfilePage = () => {
     return (
         <Container>
             <Divider/>
@@ -34,3 +34,5 @@ export const ProfilePage = () => {
         </Container>
     );
 };
+
+export default ProfilePage;

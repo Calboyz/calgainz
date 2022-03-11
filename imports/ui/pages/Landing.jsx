@@ -1,7 +1,14 @@
 import React from 'react';
+import { Container, Header } from "semantic-ui-react";
 
-export const Landing = () => {
+const Landing = () => {
     return (
-        <h1>Welcome to CalGainz</h1>
+        <Container fluid id='landing-page'>
+            <Header size='huge'>
+                Welcome to CalGainz!
+            </Header>
+        </Container>
     );
 };
+
+export default Landing;

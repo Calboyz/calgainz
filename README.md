@@ -2,12 +2,17 @@
 
 To run the applicaton type in the command:
 ```
-meteor run
+meteor npm run start
 ```
 
 To access the application, go to:
 ```
 http://localhost:3000
+```
+
+To run testcafe tests type in the command:
+```
+meteor npm run testcafe
 ```
 
 ## Assignment 2

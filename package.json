@@ -2,23 +2,24 @@
   "name": "calgainz",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "test": "meteor test --once --driver-package meteortesting:mocha",
-    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
-    "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "lint": "eslint --ext .js ."
+    "start": "meteor --settings config/settings.development.json",
+    "testcafe": "testcafe firefox tests/*.testcafe.js -q --app \"meteor npm run start\""
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@ramonak/react-progress-bar": "^4.4.0",
+    "formik": "^2.2.9",
+    "jquery": "^3.6.0",
     "meteor-node-stubs": "^1.1.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.1.1"
+    "semantic-ui-react": "^2.1.1",
+    "testcafe": "^1.18.4"
   },
   "meteor": {
     "mainModule": {
