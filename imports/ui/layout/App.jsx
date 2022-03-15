@@ -11,6 +11,9 @@ import Signin from "../pages/Signin";
 import Register from "../pages/Register";
 import ProfilePage from "../pages/ProfilePage";
 import Signout from "../pages/Signout";
+import Dashboard from '../pages/Dashboard';
+
+const styleLink = document.createElement("link"); styleLink.rel = "stylesheet"; styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css"; document.head.appendChild(styleLink);
 
 export const App = () => (
   <div>
@@ -19,6 +22,7 @@ export const App = () => (
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/test" element={<Test />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
