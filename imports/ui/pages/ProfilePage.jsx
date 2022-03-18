@@ -12,7 +12,8 @@ const ProfilePage = () => {
                         <Header as='h4' style={{ marginTop: '5px', color: 'grey' }}
                         >Name</Header>
                         <Grid.Column>
-                            <Image size='medium rounded' src='https://www.thenetworkadvisory.com/wp-content/uploads/2021/10/Nicki-Minaj-520x520.jpg' wrapped ui={true} centered/>
+                            {/* <Image size='medium rounded' src='https://www.thenetworkadvisory.com/wp-content/uploads/2021/10/Nicki-Minaj-520x520.jpg' wrapped ui={true} centered/> */}
+                            <Image size='medium rounded' src='https://i.pravatar.cc/520' wrapped ui={true} centered/>
                         </Grid.Column>
                     </Segment>
                 </Grid.Column>
