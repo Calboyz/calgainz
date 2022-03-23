@@ -2,5 +2,18 @@
   "defaultAccounts": [
     { "username": "john", "email":  "john@foo.com", "password":  "changeme"},
     { "username": "jane", "email":  "jane@foo.com", "password":  "changeme"}
+  ],
+
+  "defaultProfiles": [
+    { "bio": "This is John's Biography",
+      "age": 22,
+      "weight": 130,
+      "misc": "This is miscellaneous information"
+    },
+    { "bio": "This is Jane's Biography",
+      "age": 21,
+      "weight": 120,
+      "misc": "This is miscellaneous information"
+    }
   ]
 }

@@ -1,7 +1,24 @@
-import React from 'react';
-import {Container, Image, Divider, Grid, Segment, Header, List} from "semantic-ui-react";
+import React, { useState } from 'react';
+import { Container, Image, Divider, Grid, Segment, Header, List, Modal, Input, Button } from "semantic-ui-react";
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import Calories from '../../api/collections/Calories';
+import Profile from '../../api/collections/Profile';
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
+  const [bioString, setBioString] = useState();
+  const [ageNumber, setAgeNumber] = useState();
+  const [weightNumber, setWeightNumber] = useState();
+  const [miscString, setMiscString] = useState();
+  const [openModalBio, setOpenModalBio] = useState(false);
+
+  const onAddBioUpdate = () => {
+    if (bioString) return;
+    Meteor.call("insert_profile", {
+      userId: Meteor.user()._id,
+
+    })
+  }
     return (
         <Container>
             <Divider/>
@@ -20,13 +37,39 @@ const ProfilePage = () => {
                 <Grid.Column>
                     <Segment>
                         <Grid.Column>
-                            <Header as='h3'>Bio</Header>
-                            <Container>Bio Text</Container>
-                            <List>
-                                <List.Item>Age: N/A</List.Item>
-                                <List.Item>Weight: N/A</List.Item>
-                                <List.Item>Misc: N/A</List.Item>
-                            </List>
+                          <Header as='h3'>Bio</Header>
+                          <Modal size="mini"
+                                 onClose={() => setBioString(false)}
+                                 onOpen={() => setBioString(true)}
+                                 open={openModalBio}>
+                            <Modal.Header>Bio</Modal.Header>
+                            <Modal.Content>
+                              <Input
+                                type="string"
+                                fluid
+                                placeholder="Bio Text"
+                                value={bioString}
+                                onChange={(e,v) => setBioString(v.value)}
+                              />
+                            </Modal.Content>
+                            <Modal.Actions>
+                              <Button color="black" onClick={() => setOpenModalBio(false)}> Cancel </Button>
+                              <Button
+                                  content="Add"
+                                  labelPosition="right"
+                                  icon="checkmark"
+                                  positive
+                                  onClick={() => on}
+                              />
+                            </Modal.Actions>
+                          </Modal>
+                          <Container>Bio Text</Container>
+                          <Header as='h3'>Age</Header>
+                          <Container>Age text</Container>
+                          <Header as='h3'>Weight</Header>
+                          <Container>Weight Text</Container>
+                          <Header as='h3'>Misc</Header>
+                          <Container>Misc Text</Container>
                         </Grid.Column>
                     </Segment>
                 </Grid.Column>
@@ -36,4 +79,10 @@ const ProfilePage = () => {
     );
 };
 
-export default ProfilePage;
+export default withTracker((props) => {
+  Meteor.subscribe("profiles");
+  const profiles = Profile.find({
+    userId: Meteor.userId,
+  }).fetch();
+  return { ...props, profiles };
+})(ProfilePage);
