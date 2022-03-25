@@ -34,7 +34,7 @@ export const App = () => (
         <Route path="*" element={<NotFound />} />
         <Route path="/signout" element={<Signout />} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/profilepage" element={<ProfilePage />} />
+          <Route path="/profilepage/:_id" element={<ProfilePage />} />
         </Route>
       </Routes>
     </Router>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";
 import { Menu, Header, Dropdown } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const Navbar = ({ currentUser }) => {
   return (
@@ -24,7 +24,7 @@ const Navbar = ({ currentUser }) => {
             <Menu.Item key="test" as={NavLink} to="/test">
               Test
             </Menu.Item>,
-            <Menu.Item key="profile" as={NavLink} to="/profilepage">
+            <Menu.Item key="profile" as={NavLink} to={`/profilepage/${Meteor.userId()}`}>
               Profile Page
             </Menu.Item>,
           ]
@@ -90,5 +90,6 @@ const NavbarContainer = withTracker(() => {
     currentUser,
   };
 })(Navbar);
+
 
 export default NavbarContainer;

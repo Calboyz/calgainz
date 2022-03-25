@@ -1,25 +1,28 @@
 import SimpleSchema from "simpl-schema";
 import { Meteor } from "meteor/meteor";
 import { check } from "meteor/check"
-import { number, string } from 'prop-types';
 
 const Profiles = new Meteor.Collection("Profiles");
 
 const profilesSchema = new SimpleSchema({
   userId: {
+    required: false,
+    type: String,
+  },
+  username: {
     type: String,
   },
   bio: {
     type: String,
   },
   age: {
-    type: number,
+    type: Number,
   },
   weight: {
-    type: number,
+    type: Number,
   },
   misc: {
-    type: string,
+    type: String,
   },
 }, { check });
 
@@ -29,6 +32,7 @@ Meteor.methods({
   insert_profile(profile) {
     Profiles.insert({
       userId: profile.userId,
+      username: profile.username,
       bio: profile.bio,
       age: profile.age,
       weight: profile.weight,
@@ -42,5 +46,6 @@ Meteor.methods({
     Profiles.update({ _id: profileId }, { $push: { [fieldName]: update } });
   },
 });
+
 
 export default Profiles;

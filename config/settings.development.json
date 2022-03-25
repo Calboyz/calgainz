@@ -5,12 +5,16 @@
   ],
 
   "defaultProfiles": [
-    { "bio": "This is John's Biography",
+    {
+      "username": "john",
+      "bio": "This is John's Biography",
       "age": 22,
       "weight": 130,
       "misc": "This is miscellaneous information"
     },
-    { "bio": "This is Jane's Biography",
+    {
+      "username": "jane",
+      "bio": "This is Jane's Biography",
       "age": 21,
       "weight": 120,
       "misc": "This is miscellaneous information"
