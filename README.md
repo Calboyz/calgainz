@@ -14,31 +14,21 @@ To run testcafe tests type in the command:
 ```
 meteor npm run testcafe
 ```
-
-## Assignment 2
 Completed:
 - Navigation Bar
 - Sign in sign up mockups
 - Profile page mockup
 
-Skyler:
+Progress Updates:
 - Homepage
 - Sign up Functionality
 - Sign in Functionality
 - Working on next:
-- Points 
 - Leaderboard
 - Account DB
-
-Rafael:
-- Dashboard mockup
-- Working on next:
-- Tips/Forum
-- Tips/Forum DB
 - Calorie Count
 - Daily Goal
-
-Chase:
+- Dashboard mockup
 - Profile implementation
 - List Info:
   - Profile pic
@@ -46,7 +36,52 @@ Chase:
   - Age
   - Weight
   - Misc
+- Profile DB
 
-Working on next:
+Link:
+- https://github.com/Calboyz/calgainz
+
+Skyler:
+- New Completions:
+  - Homepage
+  - Sign up Functionality
+  - Sign in Functionality
+  - Account DB
+- Current:
+  - Points
+- Next:
+  - Leaderboard
+
+
+Rafael:
+- New Completions:
+  - Dashboard mockup
+  - Calorie Count
+  - Daily Goal
+- Current:
+  - Tips/Forum
+- Next:
+  - Tips/Forum DB
+
+
+Chase:
+- New Completions:
+  - Profile implementation
+  - List Info:
+    - Profile pic
+    - Name
+    - Age
+    - Weight
+    - Misc
+- Current:
+  - Profile DB
+- Next:
+  - (Setting) Private/not private
+
+Pending:
 - Profile DB
 - (Setting) Private/not private
+- Tips/Forum
+- Tips/Forum DB
+- Points
+- Leaderboard
