@@ -45,7 +45,10 @@ const Register = () => {
             Accounts.createUser({
                 username: values.username,
                 password: values.password,
-                email: values.email
+                email: values.email,
+                profile: {
+                    points: [],
+                }
             }, (err) => {
                 if (err) {
                     setError(err.reason);
