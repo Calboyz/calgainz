@@ -13,6 +13,7 @@ import ProfilePage from "../pages/ProfilePage";
 import Signout from "../pages/Signout";
 import Dashboard from "../pages/Dashboard";
 import Calories from "../pages/Calories";
+import LeaderBoard from "../pages/LeaderBoard";
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -29,6 +30,7 @@ export const App = () => (
         <Route path="/test" element={<Test />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/calorie" element={<Calories />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />

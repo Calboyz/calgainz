@@ -60,7 +60,7 @@ const Colories = (props) => {
   };
 
   const onAddFood = () => {
-    if (!foodName || !thisCalory) return;
+    if (!foodName || !foodCalory) return;
     Meteor.call(
       "add_item_calory",
       {
@@ -92,7 +92,7 @@ const Colories = (props) => {
     setExerciseCalory(0);
     setOpenModalExercise(false);
   };
-// Meteor.call("remove_all_calories")
+
   const calcConunter = () => {
     if (!thisCalory)
       return {
@@ -111,8 +111,8 @@ const Colories = (props) => {
       thisCalory.foods?.length > 0
         ? thisCalory.foods.map((el) => el.amount).reduce((a, b) => a + b)
         : 0;
-    const consum = foodSum - exerciseSum
-    const leftSum = goal - consum
+    const consum = foodSum - exerciseSum;
+    const leftSum = goal - consum;
     return { goal, exerciseSum, foodSum, consum, leftSum };
   };
 
