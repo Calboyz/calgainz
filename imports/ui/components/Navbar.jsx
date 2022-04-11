@@ -21,7 +21,7 @@ const Navbar = ({ currentUser }) => {
             <Menu.Item key="calorie" as={NavLink} to="/calorie">
                 Calories
             </Menu.Item>,
-            <Menu.Item key="calorie" as={NavLink} to="/leaderboard">
+            <Menu.Item key="leaderboard" as={NavLink} to="/leaderboard">
                 Leaderboard
             </Menu.Item>,
             <Menu.Item key="test" as={NavLink} to="/test">
