@@ -18,16 +18,19 @@ Completed:
 - Navigation Bar
 - Sign in sign up mockups
 - Profile page mockup
-
-Progress Updates:
 - Homepage
 - Sign up Functionality
 - Sign in Functionality
-- Working on next:
-- Leaderboard
 - Account DB
-- Calorie Count
-- Daily Goal
+- Profile implementation
+- List Info:
+  - Profile pic
+  - Name
+  - Age
+  - Weight
+  - Misc
+
+Progress Updates:
 - Dashboard mockup
 - Profile implementation
 - List Info:
@@ -37,51 +40,35 @@ Progress Updates:
   - Weight
   - Misc
 - Profile DB
+- Leaderboard
+- Points
 
 Link:
 - https://github.com/Calboyz/calgainz
 
 Skyler:
-- New Completions:
-  - Homepage
-  - Sign up Functionality
-  - Sign in Functionality
-  - Account DB
+- New Completion:
+  - Profile DB
 - Current:
-  - Points
-- Next:
-  - Leaderboard
-
+  - Tips/Forum
+  - Tips/Forum DB
+  - Fix Registration
 
 Rafael:
 - New Completions:
-  - Dashboard mockup
-  - Calorie Count
-  - Daily Goal
+  - Points
+  - Leaderboard
 - Current:
   - Tips/Forum
-- Next:
   - Tips/Forum DB
 
-
 Chase:
-- New Completions:
-  - Profile implementation
-  - List Info:
-    - Profile pic
-    - Name
-    - Age
-    - Weight
-    - Misc
 - Current:
-  - Profile DB
-- Next:
   - (Setting) Private/not private
+  - Tips/Forum
+  - Tips/Forum DB
 
 Pending:
-- Profile DB
 - (Setting) Private/not private
 - Tips/Forum
 - Tips/Forum DB
-- Points
-- Leaderboard
