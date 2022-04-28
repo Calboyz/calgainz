@@ -1,17 +1,35 @@
 import React, {useState} from 'react';
-import {Header, Form, Message, Icon, Container} from "semantic-ui-react";
+import {Header, Form, Message, Icon, Container, Grid} from "semantic-ui-react";
+import { Meteor } from "meteor/meteor"
 import { Accounts } from 'meteor/accounts-base';
 import { Navigate, Link } from 'react-router-dom'
 import { useFormik } from "formik";
+import SemanticDatepicker from "react-semantic-ui-datepickers";
+import moment from "moment";
 
 const Register = () => {
     const [error, setError] = useState('');
     const [redirectToReferrer, setRedirectToReferrer] = useState(false)
+
+    const onAddProfile = (username, date, weight) => {
+        Meteor.call("insert_profile", {
+            userId: Meteor.user()._id,
+            username: username,
+            bio: "default bio",
+            age: moment(date).year() - moment(new Date()).year(),
+            weight: weight,
+            misc: "something here"
+        })
+    }
+
     const formik = useFormik({
-        initialValues: {username: '',
-        password: '',
-        email: '',
-        confirm:''
+        initialValues: {
+            username: '',
+            password: '',
+            email: '',
+            birthday: new Date(),
+            weight: '',
+            confirm:''
     },
     validate: (values) => {
         const errors = {};
@@ -58,7 +76,11 @@ const Register = () => {
                 }
             })
             setSubmitting(false);
-        }, 400)}
+        })
+        setTimeout(() => {
+            onAddProfile(values.username, values.birthday, values.weight)
+            }, 400)
+        }
     });
 
     const iconTrigger = (passError) => {
@@ -112,6 +134,31 @@ const Register = () => {
                             pointing: 'below',
                         } : null}
                     />
+                    <Grid columns={2}>
+                        <Grid.Column>
+                            <label>Birthdate</label>
+                            <Form.Field>
+                                <SemanticDatepicker
+                                    id='register-form-datepicker'
+                                    name='date'
+                                    value={formik.values.birthday}
+                                    onChange={formik.handleChange}
+                                />
+                            </Form.Field>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <label>Weight</label>
+                            <Form.Input
+                                id='register-form-weight'
+                                name='weight'
+                                placeholder='Enter Weight in lb'
+                                type='number'
+                                value={formik.values.weight}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                        </Grid.Column>
+                    </Grid>
                     <label>Password</label>
                     <Form.Input
                         id='register-form-password'
@@ -156,14 +203,14 @@ const Register = () => {
                             pointing: 'below',
                         } : null}
                     />
-                    <Link to="/signin">
-                        Already have an account?
-                    </Link>
                     <Form.Button
                         id='register-form-submit'
                         type='submit'
                         content='Sign up'
                     />
+                    <Link to="/signin">
+                        Already have an account?
+                    </Link>
                     {error === '' ? (
                         console.log(formik.errors)
                     ) : (

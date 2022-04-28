@@ -82,10 +82,10 @@ const Signin = ({ location }) => {
                     content='Sign in'
                     icon='sign in'
                 />
+                <Link to="/register">
+                    Create an account
+                </Link>
             </Form>
-            <Link to="/signin">
-                Create an account
-            </Link>
             {error === '' ? (
                     '' )
                 : (
@@ -93,7 +93,7 @@ const Signin = ({ location }) => {
                              error
                              header="Username or Password is Incorrect"
                              content={error} />
-                )};
+                )}
         </Container>
     );
 };
