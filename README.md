@@ -29,35 +29,24 @@ Completed:
   - Age
   - Weight
   - Misc
-
-Progress Updates:
-- Dashboard mockup
-- Profile implementation
-- List Info:
-  - Profile pic
-  - Name
-  - Age
-  - Weight
-  - Misc
-- Profile DB
-- Leaderboard
 - Points
+- Leaderboard
+- Profile DB
+- Registration functionality
+- Sign in Functionality
 
 Link:
 - https://github.com/Calboyz/calgainz
 
+Release Version:
+- https://github.com/Calboyz/calgainz/releases/tag/v1.0.0
+
 Skyler:
-- New Completion:
-  - Profile DB
 - Current:
   - Tips/Forum
   - Tips/Forum DB
-  - Fix Registration
 
 Rafael:
-- New Completions:
-  - Points
-  - Leaderboard
 - Current:
   - Tips/Forum
   - Tips/Forum DB
