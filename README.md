@@ -32,8 +32,7 @@ Completed:
 - Points
 - Leaderboard
 - Profile DB
-- Registration functionality
-- Sign in Functionality
+- Update Registration functionality
 
 Link:
 - https://github.com/Calboyz/calgainz
