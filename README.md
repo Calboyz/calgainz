@@ -53,6 +53,9 @@ Link:
 Release Version:
 - https://github.com/Calboyz/calgainz/releases/tag/v1.0.0
 
+Wiki Page:
+- https://github.com/Calboyz/calgainz/wiki
+
 Skyler:
 - Current:
   - Tips/Forum
