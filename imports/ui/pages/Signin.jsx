@@ -38,7 +38,7 @@ const Signin = ({ location }) => {
     });
 
     if (redirectToReferrer) {
-        return <Navigate to="/" replace={true} />
+        return <Navigate to="/calories" replace={true} />
     }
 
     return (

@@ -27,9 +27,7 @@ export const App = () => (
       <NavbarContainer />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/calorie" element={<Calories />} />
+        <Route path="/calories" element={<Calories />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/register" element={<Register />} />

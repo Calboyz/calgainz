@@ -15,17 +15,11 @@ const Navbar = ({ currentUser }) => {
       </Menu.Item>
       {currentUser
         ? [
-            <Menu.Item key="dashboard" as={NavLink} to="/dashboard">
-              Dashboard
-            </Menu.Item>,
-            <Menu.Item key="calorie" as={NavLink} to="/calorie">
+            <Menu.Item key="calories" as={NavLink} to="/calories">
                 Calories
             </Menu.Item>,
             <Menu.Item key="leaderboard" as={NavLink} to="/leaderboard">
                 Leaderboard
-            </Menu.Item>,
-            <Menu.Item key="test" as={NavLink} to="/test">
-              Test
             </Menu.Item>,
             <Menu.Item key="profile" as={NavLink} to={`/profilepage/${Meteor.userId()}`}>
               Profile Page
